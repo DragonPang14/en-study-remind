@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: en-remind
+  datasource:
+    url: jdbc:h2:file:./src/main/resources/db/english;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true # 开启 H2 网页控制台，访问 http://localhost:8080/h2-console
+      path: /h2-console
+  jpa:
+    hibernate:
+      ddl-auto: update # 自动建表
+    show-sql: false
+
+# --- 企业微信配置 (请在此处填入你的参数) ---
+wechat:
+  corp-id: "wwe8c4cae1218ad2d9"
+  corp-secret: "3IbY0Czoac3fouRtv7x0xZkQTWOG1K4x99lQtMZ_l4E"
+  agent-id: 1000002 # 你的 AgentId (数字)
