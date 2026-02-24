@@ -1,7 +1,7 @@
-package com.electrocardiogram.enremind.service;
+package com.electrocardiogram.esr.service;
 
-import com.electrocardiogram.enremind.dao.WordRepository;
-import com.electrocardiogram.enremind.model.Word;
+import com.electrocardiogram.esr.dao.WordRepository;
+import com.electrocardiogram.esr.model.Word;
 import jakarta.annotation.Resource;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;

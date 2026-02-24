@@ -1,7 +1,8 @@
-package com.electrocardiogram.enremind.service;
+package com.electrocardiogram.esr.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -9,6 +10,7 @@ import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
+@Slf4j
 @Service
 public class WeChatService {
 
@@ -48,7 +50,7 @@ public class WeChatService {
                 return cachedToken;
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("获取 AccessToken 失败: {}", e.getMessage());
         }
         return null;
     }
@@ -72,7 +74,7 @@ public class WeChatService {
         try {
             webClient.post().uri(url).bodyValue(body).retrieve().bodyToMono(String.class).block(Duration.ofSeconds(5));
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("发送消息失败: {}", e.getMessage());
         }
     }
 }

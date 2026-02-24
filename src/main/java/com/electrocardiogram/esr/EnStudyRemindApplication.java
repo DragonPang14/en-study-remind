@@ -1,13 +1,13 @@
-package com.electrocardiogram.enremind;
+package com.electrocardiogram.esr;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class EnremindApplication {
+public class EnStudyRemindApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EnremindApplication.class, args);
+        SpringApplication.run(EnStudyRemindApplication.class, args);
     }
 
 }

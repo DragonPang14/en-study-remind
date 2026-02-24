@@ -12,7 +12,7 @@
     <artifactId>enremind</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>enremind</name>
-    <description>enremind</description>
+    <description>en-study-remind</description>
     <url/>
     <licenses>
         <license/>
@@ -44,6 +44,17 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <!-- SLF4J API -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Logback 实现 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>

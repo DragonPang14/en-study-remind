@@ -1,4 +1,4 @@
-package com.electrocardiogram.enremind.model;
+package com.electrocardiogram.esr.model;
 
 import jakarta.persistence.*;
 import lombok.Data;

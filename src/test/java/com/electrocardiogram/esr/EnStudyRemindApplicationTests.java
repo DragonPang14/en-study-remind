@@ -1,10 +1,10 @@
-package com.electrocardiogram.enremind;
+package com.electrocardiogram.esr;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class EnremindApplicationTests {
+class EnStudyRemindApplicationTests {
 
     @Test
     void contextLoads() {
