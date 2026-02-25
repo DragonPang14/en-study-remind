@@ -5,7 +5,7 @@ spring:
   application:
     name: en-study-remind
   datasource:
-    url: jdbc:h2:file:./src/main/resources/db/english;DB_CLOSE_ON_EXIT=FALSE;AUTO_SERVER=TRUE
+    url: jdbc:h2:file:./db/english;AUTO_SERVER=TRUE
     driver-class-name: org.h2.Driver
     username: sa
     password:
@@ -13,6 +13,8 @@ spring:
     console:
       enabled: true # 开启 H2 网页控制台，访问 http://localhost:8080/h2-console
       path: /h2-console
+      settings:
+        web-allow-others: true # 允许远程访问 H2 控制台
   jpa:
     hibernate:
       ddl-auto: none # 自动建表
