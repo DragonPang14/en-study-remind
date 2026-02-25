@@ -15,8 +15,14 @@ spring:
       path: /h2-console
   jpa:
     hibernate:
-      ddl-auto: update # 自动建表
+      ddl-auto: none # 自动建表
     show-sql: false
+    open-in-view: false
+  sql:
+    init:
+      mode: always # 每次启动应用时都执行初始化脚本
+      schema-locations: classpath:sql/schema.sql # 初始化脚本位置
+      continue-on-error: true # 初始化脚本执行失败时是否继续执行
 
 # --- 企业微信配置 (请在此处填入你的参数) ---
 wechat:
