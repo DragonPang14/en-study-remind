@@ -17,7 +17,7 @@ public class DailyTaskService {
     private WordRepository wordRepository;
 
     @Resource
-    private WeChatService weChatService;
+    private WeChatBotService weChatBotService;
 
     // 每日早上8:30推送，测试可改为 0 * * * * ? 每分钟执行一次
     @Scheduled(cron = "0 30 8 * * ?")
@@ -29,7 +29,7 @@ public class DailyTaskService {
 
         // 2. 校验数据，避免空推送
         if (newWords.isEmpty() && reviewWords.isEmpty() && phrases.isEmpty()) {
-            weChatService.sendMessage("词库为空，请检查ECDICT词库是否导入成功！");
+            weChatBotService.sendMessage("词库为空，请检查ECDICT词库是否导入成功！");
             return;
         }
 
@@ -58,7 +58,7 @@ public class DailyTaskService {
         content.append("\n✨ 每天进步一点点，外企offer在眼前！");
 
         // 4. 推送到微信
-        weChatService.sendMessage(content.toString());
+        weChatBotService.sendMessage(content.toString());
     }
 
     // 单词列表拼接工具方法，适配ECDICT字段

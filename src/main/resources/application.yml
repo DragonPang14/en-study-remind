@@ -27,7 +27,6 @@ spring:
       continue-on-error: true # 初始化脚本执行失败时是否继续执行
 
 # --- 企业微信配置 (请在此处填入你的参数) ---
-wechat:
-  corp-id: "wwe8c4cae1218ad2d9"
-  corp-secret: "3IbY0Czoac3fouRtv7x0xZkQTWOG1K4x99lQtMZ_l4E"
-  agent-id: 1000002 # 你的 AgentId (数字)
+weChat:
+# 企业微信机器人配置
+  groupKey: "?"
