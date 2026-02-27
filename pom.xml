@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.electrocardiogram</groupId>
-    <artifactId>enremind</artifactId>
+    <artifactId>en-study-remind</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>enremind</name>
+    <name>en-study-remind</name>
     <description>en-study-remind</description>
     <url/>
     <licenses>
