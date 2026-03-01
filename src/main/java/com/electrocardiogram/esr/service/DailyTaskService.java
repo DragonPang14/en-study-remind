@@ -3,6 +3,7 @@ package com.electrocardiogram.esr.service;
 import com.electrocardiogram.esr.dao.WordRepository;
 import com.electrocardiogram.esr.model.Word;
 import jakarta.annotation.Resource;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
@@ -10,6 +11,7 @@ import org.springframework.util.StringUtils;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Slf4j
 @Service
 public class DailyTaskService {
 
@@ -20,8 +22,9 @@ public class DailyTaskService {
     private WeChatBotService weChatBotService;
 
     // 每日早上8:30推送，测试可改为 0 * * * * ? 每分钟执行一次
-    @Scheduled(cron = "0 30 8 * * ?")
+    @Scheduled(cron = "0 0 9 * * ?")
     public void pushDailyEnglish() {
+        log.info("开始执行每日英语推送任务");
         // 1. 数据准备：高频热词+复习旧词+短语，完全匹配你的需求
         List<Word> newWords = wordRepository.findRandomHotWords(15);    // 15个高频新词
         List<Word> reviewWords = wordRepository.findReviewWords(5);      // 5个旧词复习
@@ -35,7 +38,7 @@ public class DailyTaskService {
 
         // 3. 拼接推送内容，适配新字段，排版更清晰
         StringBuilder content = new StringBuilder();
-        content.append("🌅 每日英语打卡 | 外企进阶\n\n");
+        content.append("🌅 每日英语打卡 \n\n");
 
         // 新词学习板块
         content.append("📖 【高频新词学习】15个\n");
